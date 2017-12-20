@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <nav class="navbar">
+      <input class="form-control" type="text" name="search" *ngIf="gameFilter" [(ngModel)]="gameFilter.name" placeholder="Search">
+    </nav>
+    <table class="table">
+      <thead>
+        <tr>
+          <th (click)="onClickName()">Name</th>
+          <th (click)="onClickGenre()">Genre</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let game of games | orderBy: order | filterBy: gameFilter | paginate: { itemsPerPage: 5, currentPage: p }" >
+          <td>{{game.name}}</td>
+          <td>{{game.genre}}</td>
+        </tr>
+      </tbody>
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </table>
+  </div>
+</div>
