@@ -6,21 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./component1.component.css']
 })
 export class Component1Component implements OnInit {
-  opacity:number = 1;
-
   constructor() { }
 
   ngOnInit() {
   }
-
-  onMouseEnter() {
-    this.opacity = .3;
-    console.log("opacity changed to " + this.opacity);
-  }
-
-  onMouseLeave() {
-    this.opacity = 1;
-    console.log("opacity changed to " + this.opacity);
-  }
-
 }

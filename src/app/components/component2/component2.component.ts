@@ -54,12 +54,60 @@ export class Component2Component implements OnInit {
        "id":"10",
        "name": "Witcher Assasins on King",
        "genre": "Adventure"
+     },
+     {
+       "id":"11",
+       "name": "DOTA 2",
+       "genre": "Strategy"
+     },
+     {
+       "id":"12",
+       "name": "AOE 3",
+       "genre": "Strategy"
+     },
+     {
+       "id":"13",
+       "name": "GTA 5",
+       "genre": "RPG"
+     },
+     {
+       "id":"14",
+       "name": "Far Cry 3",
+       "genre": "Action"
+     },
+     {
+       "id":"15",
+       "name": "GTA San Andreas",
+       "genre": "RPG"
+     },
+     {
+       "id":"16",
+       "name": "Hitman",
+       "genre": "Action"
+     },
+     {
+       "id":"17",
+       "name": "NFS MW",
+       "genre": "Sport"
+     },{
+       "id":"18",
+       "name": "Fifa 16",
+       "genre": "Sport"
+     },{
+       "id":"19",
+       "name": "NFS Sen 2",
+       "genre": "Sport"
+     },{
+       "id":"20",
+       "name": "Witcher Assasins on King",
+       "genre": "Adventure"
      }
    ];
-   gameFilter:any = {id:'',name:'',genre''};
+
+   gameFilter:any = {id:'',name:'',genre:''};
    order:any;
    p: number = 1;
-  collection: any[] = this.games;  
+  collection: any[] = this.games;
 
   constructor() { }
 
