@@ -21,11 +21,12 @@ body {
   width: 200px;
   background: url("../../../assets/Desert.svg");
   background-size: auto;
-  animation-name:moveright;
+  animation:moveright 5s linear infinite both;
+  /* animation-name: moveright;
   animation-duration:5s;
-  animation-fill-mode:both;
-  animation-iteration-count: infinite;
   animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode:both; */
 }
 
 p {
