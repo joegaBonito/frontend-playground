@@ -24,4 +24,4 @@ export class Reset implements Action {
   constructor(public payload:number){}
 }
 
-export type ListActions = Increment | Decrement | Reset;
+export type Component5Actions = Increment | Decrement | Reset;

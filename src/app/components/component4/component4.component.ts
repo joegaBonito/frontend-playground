@@ -19,22 +19,30 @@ export class Component4Component implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    //this.numberSequence();
+    //this.usingSubscription();
+    //this.simpleMap();
+    this.inputFunction();
+  }
+
+  numberSequence() {
     const myNumbers = Observable.interval(1000).map(
       (data: number) => {
-            return data * 2;
+        return data * 2;
       }
     );
     let numberDom = <HTMLElement>document.querySelector(".number");
     this.numbersObsSubscription = myNumbers.subscribe(
       (number: number) => {
         numberDom.innerText += number + "\n";
-        if(number >= 10) {
+        if (number >= 10) {
           this.numbersObsSubscription.unsubscribe();
         }
       }
     );
+  }
 
-
+  usingSubscription() {
     const myObservable = Observable.create((observer: Observer<any>) => {
       setTimeout(() => {
         observer.next('first package');
@@ -60,15 +68,29 @@ export class Component4Component implements OnInit {
       this.value = value
     });
     mySubObservable.next('foo');
+  }
 
+  simpleMap() {
     //emit (1,2,3,4,5)
     const source = Observable.from([1, 2, 3, 4, 5]);
     //add 10 to each value
     const example = source.map(val => val + 10);
     //output: 11,12,13,14,15
-    let mapDom = <HTMLElement> document.querySelector(".map");
+    let mapDom = <HTMLElement>document.querySelector(".map");
     const subscribe = example.subscribe(val => {
       mapDom.innerText += val + "\n";
     });
   }
+
+  inputFunction() {
+    let input = <HTMLElement>document.querySelector(".input");
+    let inputShow = <HTMLElement>document.querySelector(".inputShow");
+    let inputObservable = Observable.fromEvent<KeyboardEvent>(input, 'input');
+
+    inputObservable.map(event => (event.target as HTMLInputElement).value).debounceTime(1000).distinctUntilChanged().
+      subscribe(value => {
+        inputShow.innerText += value + "\n"
+      });
+  }
 }
+

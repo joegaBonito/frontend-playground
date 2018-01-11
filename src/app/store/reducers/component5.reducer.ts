@@ -1,8 +1,4 @@
-import * as ListActions from '../actions/countActions';
-
-export interface AppState {
-  count:State
-}
+import * as Component5Actions from '../actions/component5.action';
 
 export interface State {
   count:number;
@@ -12,21 +8,21 @@ const initialState:State = {
   count: 0
 };
 
-export function countReducer(state = initialState, action: ListActions.ListActions) {
+export function countReducer(state = initialState, action: Component5Actions.Component5Actions) {
  switch (action.type) {
-   case ListActions.INCREMENT:
+   case Component5Actions.INCREMENT:
      return {
        ...state,
        count:state.count+action.payload
      }
 
-   case ListActions.DECREMENT:
+   case Component5Actions.DECREMENT:
     return {
       ...state,
       count:state.count-action.payload
     }
 
-   case ListActions.RESET:
+   case Component5Actions.RESET:
    return {
      ...state,
      count:action.payload

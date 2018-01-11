@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
-import * as ListActions from '../../store/actions/countActions';
-import * as fromList from '../../store/reducers/countReducer';
+import * as ListActions from '../../store/actions/component5.action';
+import * as fromApp from '../../store/reducers/app.reducer';
 
 @Component({
   selector: 'app-component5',
@@ -11,12 +11,12 @@ import * as fromList from '../../store/reducers/countReducer';
 })
 export class Component5Component implements OnInit {
   count$:Observable<{count:number}>;
-  constructor(private store: Store<fromList.AppState>) {
+  constructor(private store: Store<fromApp.AppState>) {
 
   }
 
   ngOnInit(){
-    this.count$ = this.store.select('count');
+    this.count$ = this.store.select('countList');
   }
 
   increment(){

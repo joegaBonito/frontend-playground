@@ -7,6 +7,7 @@ import { LandingComponent } from './components/landing/landing.component';
 import { Component3Component } from './components/component3/component3.component';
 import { Component4Component } from './components/component4/component4.component';
 import { Component5Component } from './components/component5/component5.component';
+import { Component6Component } from './components/component6/component6.component';
 
 const appRoutes:Routes = [
   {path:"",component:LandingComponent},
@@ -15,6 +16,7 @@ const appRoutes:Routes = [
   {path:"Component3Component",component:Component3Component},
   {path:"Component4Component",component:Component4Component},
   {path:"Component5Component",component:Component5Component},
+  {path:"Component6Component",component:Component6Component},
 ]
 
 @NgModule({
